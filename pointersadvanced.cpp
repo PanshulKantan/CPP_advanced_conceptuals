@@ -39,13 +39,15 @@ int main(){
 
 
     x = nullptr;
-
-    delete x;
+        // you cant delete the x pointer as its not a heap memory but its pointing to an array so no chance of overflow and you cant delete anything implicitely in stack so it will give undefined behaviour.
 
     int *a = new int(10); // this is a way to dynamically allocate a memory as a pointer  in heap. you can only use pointer because new int allocates a memory whose value can be defined
+    // or you can simply write *a = 10;
     // we cant say int a = new int because new int is a memory and int required an integer as input. so it means we allocated a heap memory to a pointer named a which contains the value 10 
     delete a; // this is important because it might cause overflow or memory leak because its in heap so its a must do thing after the use of pointer is finished
     // we dont need to implicitely do it for stack because it automatically deleted the memory after its use is finished.
+    a = nullptr; // setting it to nullptr is important so that it wont be a dangled pointer hence it wont have any garbage value
+
 
     std::cout << std::endl;
 
