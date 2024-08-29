@@ -54,5 +54,34 @@ int main(){
     for(int y=0; y< 3; y++){
         std::cout << "hi ";
     }
+
+
+    int *z = new int(10); // can use {} also 
+    int l = 5;
+    *z = l;     // just checking can we write *x = l or x = &l and apparently both are correct
+    std::cout << l;
+
+
+    //NOTE THAT IN DYNAMIC MEMORY, LEAK MEANS A MEMORY WHICH CANT BE CATCHED
+    /* 
+    int *x = new int (10); it assigns value 10
+    int y = 8;
+    x = &y; THIS IS THE CASE WHERE THE POINTER IS POINTING TO A NEW MEMORY BUT THE MEMORY BEFORE THIS CANT BE SECURED AGAIN BECAUSE IT WAS HEAP
+    THIS IS MEMORY LEAK SO DONT DO THIS
+
+
+    #include <iostream>
+    int main(){
+
+
+    {
+    int *x = new int(10);
+    }
+    
+    }        in this code there is nothing extra but just assigning of a pointer into the heap
+    but note that it is inside { } hence a local variable, so when it reaches the end of the braces '{ }' it will be deleted as its a stack
+    but the new int(10) wont be deleted as its in heap, hence this is also a memory leak
+    
+    */
     
 }
