@@ -6,7 +6,7 @@ int main(){
     char z = '$';
     char w = 'c';
 
-    if(std::isalnum(x)){
+    if(std::isalnum(x)){    // alnum is alphanumeric, for ex- 7, c, 2432, swkjrf, klfwe42423lkh, etc
         std::cout << "integral value of x is alphanumeric. Boolean value of isalum: " << std::isalnum(x) << std::endl;
     } else{
         std::cout << "integral value of x is not alphanumeric. Boolean value of isalum: " << std::isalnum(x) <<std::endl;
@@ -26,7 +26,7 @@ int main(){
 
 
 
-    if(std::isalpha(y)){
+    if(std::isalpha(y)){    // checks if the char is alphabetic
         std::cout << "y is alphabetic its boolean value is: " << std::isalpha(y) << std::endl;
     }
 
@@ -36,10 +36,10 @@ int main(){
 
 
 
-    if(std::islower(w)){
+    if(std::islower(w)){ //checks if the char is lowercase
         std::cout << "w is a lowercase character and its boolean is: " << std::islower(w) << std::endl;
     }
-    if(std::isupper(y)){
+    if(std::isupper(y)){     // checks if the char is uppercase (caps lock)
         std::cout << "y is an uppercase character and its boolean is: " << std::isupper(y) << std::endl;
     }
 
@@ -52,11 +52,11 @@ int main(){
 
 
 
-    char message[] = {"Hello people, my name is Panshul. This is my code on character manipulation :)"};
-    std::cout << message <<std::endl;
-    int emptycount{};
+    char message[] = "Hello people, my name is Panshul. This is my code on character manipulation :)"; // setting a string in a char will print the string if we write cout << message
+    std::cout << message <<std::endl;   // and if its not a string then it will print its memory address
+    int emptycount{};   //initialised to 0
     for(int i = 0; i < std::size(message); i++){
-        if(std::isblank(message[i])){
+        if(std::isblank(message[i])){   // checks if the char is blank anywhere
             std::cout << "Found an empty character in the array at index " << i << std::endl;
             emptycount++;
         }
@@ -67,10 +67,10 @@ int main(){
     for(int i=0; i< std::size(message); i++){
         message[i] = std::toupper(message[i]);  // std::tolower can also be used
     }
-    std::cout << message <<std::endl;
+    std::cout << message <<std::endl;   // it changed the character from lower to upper
      
     for(int i=0; i<std::size(message); i++){
-        message[i] = std::tolower(message[i]);
+        message[i] = std::tolower(message[i]);  //upper to lower
     }
     std::cout << message <<std::endl;
 }
