@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 int main(){
-
+    
     const char *message1= "Hello my name is Panshul"; // note that you cannot modify an array but a pointer.
 
     const char *message2{"i live in shalimar garden"};  //writint const is important as we dont want to change the size of the array hence its memory address to the pointer
@@ -25,8 +25,7 @@ int main(){
 
 
 
-
-    int n = 2;
+     int n = 2;
     char letter[] = "alabama";
     const char *letter2 = "blabama";
     char letter3[] = "alomaba";
@@ -50,6 +49,28 @@ int main(){
         // because if we update the message1 pointer to point at different element, the entire index calculation will be disturbed as the original array is modified
         count++;
     }
-    std::cout << "there were total " << count << " 'l' in the statement";
+    std::cout << "there were total " << count << " 'l' in the statement" << std::endl;
 
+
+
+    // ***************concatenate and other topics****************//
+    char first_word[50] = "hellooooooooo ";
+    char second_word[50] = "wooooorllllld!! ";
+    char misclenious[50] = "duniyaaaaaaaa";
+
+
+    std::strcat(first_word, second_word);   // concatenation is like integrating that second word into the first one so it connects both
+    // first argument is the array in which you want to add another string or array, second argument is the array or the string you want to add
+    std::cout << first_word << std::endl;
+
+    std::strncat(first_word, second_word, 5);   // strncat differs than strcat just by the amount of elements you want to add, it takes third argument of till which element you want to add which is 5
+    std::cout << first_word << std::endl;   // note that each of them have to be modifiable and not a constant (or pointer) so we cant write const or define them as a pointer or it will give compilation error
+
+    std::strcpy(first_word, second_word);   // it is used to copy one string and paste it on other string deleting the elements of the string you are copying on 
+    std::cout << first_word << std::endl;   // hence it will copy second_word and paste it in first_word deleting the initial elements of first_word
+
+    std::strncpy(first_word, misclenious, 3);   // same as of strncat, it will copy first 3 elements of the array you want to copy and paste it in the first 3 elements of the array you argumented on 
+    std::cout << first_word << std::endl;
+
+    
 }
