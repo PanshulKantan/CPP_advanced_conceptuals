@@ -7,7 +7,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "${file}",  // ${workspacefolder}/*.cpp if we want to compile entire folders in vscode together instead of ${file}
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
