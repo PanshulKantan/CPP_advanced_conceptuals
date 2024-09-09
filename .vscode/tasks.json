@@ -7,6 +7,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                //"-std=c++20",      // this is a code telling the compiler to set an environment with c++ 20 version
                 "${file}",  // ${workspacefolder}/*.cpp if we want to compile entire folders in vscode together instead of ${file}
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
